@@ -10,7 +10,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-03-20</date>
+ <date>2017-10-17</date>
  <version>
   <release>2.2.3</release>
   <api>2.2.0</api>
@@ -25,20 +25,13 @@
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <dir name="doc">
-    <dir name="Horde">
-     <dir name="Translation">
-      <file name="COPYING" role="doc" />
-     </dir> <!-- /doc/Horde/Translation -->
-    </dir> <!-- /doc/Horde -->
-   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Horde">
      <dir name="Translation">
-      <file name="Autodetect.php" role="php" />
       <dir name="Handler">
        <file name="Gettext.php" role="php" />
       </dir> <!-- /lib/Horde/Translation/Handler -->
+      <file name="Autodetect.php" role="php" />
       <file name="Exception.php" role="php" />
       <file name="Handler.php" role="php" />
      </dir> <!-- /lib/Horde/Translation -->
@@ -131,6 +124,7 @@
      </dir> <!-- /test/Horde/Translation -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
+   <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -159,19 +153,15 @@
  </dependencies>
  <phprelease>
   <filelist>
-   <install as="COPYING" name="doc/Horde/Translation/COPYING" />
    <install as="Horde/Translation.php" name="lib/Horde/Translation.php" />
    <install as="Horde/Translation/Autodetect.php" name="lib/Horde/Translation/Autodetect.php" />
    <install as="Horde/Translation/Exception.php" name="lib/Horde/Translation/Exception.php" />
    <install as="Horde/Translation/Handler.php" name="lib/Horde/Translation/Handler.php" />
    <install as="Horde/Translation/Handler/Gettext.php" name="lib/Horde/Translation/Handler/Gettext.php" />
+   <install as="LICENSE" name="LICENSE" />
    <install as="Horde/Translation/AllTests.php" name="test/Horde/Translation/AllTests.php" />
    <install as="Horde/Translation/AutodetectTest.php" name="test/Horde/Translation/AutodetectTest.php" />
    <install as="Horde/Translation/bootstrap.php" name="test/Horde/Translation/bootstrap.php" />
-   <install as="Horde/Translation/GettextTest.php" name="test/Horde/Translation/GettextTest.php" />
-   <install as="Horde/Translation/phpunit.xml" name="test/Horde/Translation/phpunit.xml" />
-   <install as="Horde/Translation/TestBase.php" name="test/Horde/Translation/TestBase.php" />
-   <install as="Horde/Translation/WrapperTest.php" name="test/Horde/Translation/WrapperTest.php" />
    <install as="Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" name="test/Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" />
    <install as="Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.po" name="test/Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.po" />
    <install as="Horde/Translation/fixtures/composer/Horde/Translation/Composer/TestAutodetect.php" name="test/Horde/Translation/fixtures/composer/Horde/Translation/Composer/TestAutodetect.php" />
@@ -185,7 +175,11 @@
    <install as="Horde/Translation/fixtures/source/lib/Horde/Translation/Source/TestAutodetect.php" name="test/Horde/Translation/fixtures/source/lib/Horde/Translation/Source/TestAutodetect.php" />
    <install as="Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" name="test/Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" />
    <install as="Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" name="test/Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" />
-   </filelist>
+   <install as="Horde/Translation/GettextTest.php" name="test/Horde/Translation/GettextTest.php" />
+   <install as="Horde/Translation/phpunit.xml" name="test/Horde/Translation/phpunit.xml" />
+   <install as="Horde/Translation/TestBase.php" name="test/Horde/Translation/TestBase.php" />
+   <install as="Horde/Translation/WrapperTest.php" name="test/Horde/Translation/WrapperTest.php" />
+  </filelist>
  </phprelease>
  <changelog>
   <release>
@@ -400,7 +394,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-03-20</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
