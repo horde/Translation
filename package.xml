@@ -10,7 +10,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-20</date>
  <version>
   <release>2.2.3</release>
   <api>2.2.0</api>
@@ -118,7 +118,6 @@
       <file name="AutodetectTest.php" role="test" />
       <file name="bootstrap.php" role="test" />
       <file name="GettextTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
       <file name="TestBase.php" role="test" />
       <file name="WrapperTest.php" role="test" />
      </dir> <!-- /test/Horde/Translation -->
@@ -176,7 +175,6 @@
    <install as="Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" name="test/Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" />
    <install as="Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" name="test/Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" />
    <install as="Horde/Translation/GettextTest.php" name="test/Horde/Translation/GettextTest.php" />
-   <install as="Horde/Translation/phpunit.xml" name="test/Horde/Translation/phpunit.xml" />
    <install as="Horde/Translation/TestBase.php" name="test/Horde/Translation/TestBase.php" />
    <install as="Horde/Translation/WrapperTest.php" name="test/Horde/Translation/WrapperTest.php" />
   </filelist>
@@ -394,7 +392,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-20</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
