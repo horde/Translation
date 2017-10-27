@@ -10,7 +10,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-20</date>
+ <date>2017-10-27</date>
  <version>
   <release>2.2.3</release>
   <api>2.2.0</api>
@@ -24,6 +24,13 @@
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
+   <dir name="doc">
+    <dir name="Horde">
+     <dir name="Translation">
+      <file name="CHANGES" role="doc" />
+     </dir> <!-- /doc/Horde/Translation -->
+    </dir> <!-- /doc/Horde -->
+   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Horde">
      <dir name="Translation">
@@ -151,6 +158,7 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="CHANGES" name="doc/Horde/Translation/CHANGES" />
    <install as="Horde/Translation.php" name="lib/Horde/Translation.php" />
    <install as="Horde/Translation/Autodetect.php" name="lib/Horde/Translation/Autodetect.php" />
    <install as="Horde/Translation/Exception.php" name="lib/Horde/Translation/Exception.php" />
@@ -391,7 +399,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-20</date>
+   <date>2017-10-27</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
    </notes>
