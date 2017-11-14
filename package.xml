@@ -126,7 +126,6 @@
       <file name="AutodetectTest.php" role="test" />
       <file name="bootstrap.php" role="test" />
       <file name="GettextTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
       <file name="TestBase.php" role="test" />
       <file name="WrapperTest.php" role="test" />
      </dir> <!-- /test/Horde/Translation -->
@@ -171,7 +170,6 @@
    <install as="Horde/Translation/AutodetectTest.php" name="test/Horde/Translation/AutodetectTest.php" />
    <install as="Horde/Translation/bootstrap.php" name="test/Horde/Translation/bootstrap.php" />
    <install as="Horde/Translation/GettextTest.php" name="test/Horde/Translation/GettextTest.php" />
-   <install as="Horde/Translation/phpunit.xml" name="test/Horde/Translation/phpunit.xml" />
    <install as="Horde/Translation/TestBase.php" name="test/Horde/Translation/TestBase.php" />
    <install as="Horde/Translation/WrapperTest.php" name="test/Horde/Translation/WrapperTest.php" />
    <install as="Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" name="test/Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" />
