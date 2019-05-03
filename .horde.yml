@@ -2,7 +2,7 @@
 id: Translation
 name: Translation
 full: Translation library
-description: Translation wrappers.
+description: A translation wrappers library.
 list: dev
 type: library
 homepage: https://www.horde.org/libraries/Horde_Translation
