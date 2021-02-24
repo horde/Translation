@@ -1,4 +1,10 @@
 ------------
+v3.0.0alpha2
+------------
+
+[rla] Add typesafe PSR-4 version with composer-ready detection.
+
+------------
 v3.0.0alpha1
 ------------
 

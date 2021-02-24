@@ -6,12 +6,15 @@
  * @package    Translation
  * @subpackage UnitTests
  */
-class Horde_Translation_GettextTest extends Horde_Translation_TestBase
+namespace Horde\Translation\Test;
+use Horde_Translation_Handler_Gettext;
+
+class GettextTest extends TestBase
 {
     private $_dict;
     private $_otherDict;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->_dict = new Horde_Translation_Handler_Gettext('Horde_Translation', __DIR__ . '/fixtures/locale');
@@ -34,13 +37,7 @@ class Horde_Translation_GettextTest extends Horde_Translation_TestBase
 
     public function testInvalidConstruction()
     {
-        try {
-            new Horde_Translation_Handler_Gettext('Horde_Translation', __DIR__ . '/DOES_NOT_EXIST');
-        } catch (InvalidArgumentException $e) {
-            $this->assertEquals(
-                __DIR__ . '/DOES_NOT_EXIST is not a directory',
-                $e->getMessage()
-            );
-        }
+        $this->expectException('InvalidArgumentException');
+        new Horde_Translation_Handler_Gettext('Horde_Translation', __DIR__ . '/DOES_NOT_EXIST');
     }
 }

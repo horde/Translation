@@ -1,9 +1,10 @@
 {
+    "minimum-stability": "dev",
     "name": "horde/translation",
     "description": "Translation library",
-    "type": "horde-library",
+    "type": "library",
     "homepage": "https://www.horde.org/libraries/Horde_Translation",
-    "license": "LGPL-2.1",
+    "license": "LGPL-2.1-only",
     "authors": [
         {
             "name": "Jan Schneider",
@@ -11,8 +12,7 @@
             "role": "lead"
         }
     ],
-    "version": "3.0.0alpha1",
-    "time": "2021-02-24",
+    "time": "2021-11-24",
     "repositories": [
         {
             "type": "composer",
@@ -20,11 +20,12 @@
         }
     ],
     "require": {
-        "horde/horde-installer-plugin": "*",
-        "php": "^5.3 || ^7"
+        "php": "^7.4 || ^8"
+    },
+    "require-dev": {
+        "horde/test": "^3 || dev-FRAMEWORK_6_0"
     },
     "suggest": {
-        "horde/test": "^2.1",
         "ext-gettext": "*"
     },
     "autoload": {
@@ -33,6 +34,11 @@
         },
         "psr-4": {
             "Horde\\Translation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Horde\\Translation\\Test\\": "test/"
         }
     }
 }

@@ -1,10 +1,23 @@
 ---
+3.0.0alpha2:
+  api: 3.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2021-02-24
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [rla] Add typesafe PSR-4 version with composer-ready detection.
+    |+
+  notes: |+
 3.0.0alpha1:
   api: 3.0.0alpha1
   state:
     release: stable
     api: stable
-  date: 2017-10-20
+  date: 2021-02-24
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
