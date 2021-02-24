@@ -21,10 +21,10 @@
     ],
     "require": {
         "horde/horde-installer-plugin": "*",
-        "php": "^5.3 || ^7"
+        "php": "^7"
     },
     "suggest": {
-        "horde/test": "^2.1",
+        "horde/test": "^3",
         "ext-gettext": "*"
     },
     "autoload": {
