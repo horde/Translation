@@ -1,4 +1,5 @@
 {
+    "minimum-stability": "dev",
     "name": "horde/translation",
     "description": "Translation library",
     "type": "library",
