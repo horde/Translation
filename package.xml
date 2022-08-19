@@ -10,21 +10,30 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2021-03-13</date>
+ <date>2022-08-19</date>
  <version>
-  <release>3.0.0alpha6</release>
+  <release>3.0.0alpha2</release>
   <api>3.0.0alpha1</api>
  </version>
  <stability>
   <release>alpha</release>
   <api>alpha</api>
  </stability>
- <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+ <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1-only</license>
  <notes>
-* 
+* |+
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
+   <dir name=".github">
+    <dir name="workflows">
+     <file name="ci.yml" role="php" />
+     <file name="phpdoc.yml" role="php" />
+     <file name="release.yml" role="php" />
+     <file name="update-composer-json.yml" role="php" />
+     <file name="update-satis.yml" role="php" />
+    </dir> <!-- /.github/workflows -->
+   </dir> <!-- /.github -->
    <dir name="doc">
     <dir name="Horde">
      <dir name="Translation">
@@ -45,90 +54,98 @@
      <file name="Translation.php" role="php" />
     </dir> <!-- /lib/Horde -->
    </dir> <!-- /lib -->
+   <dir name="src">
+    <file name="AbstractTranslation.php" role="php" />
+    <file name="Autodetect.php" role="php" />
+    <file name="GettextHandler.php" role="php" />
+    <file name="Handler.php" role="php" />
+    <file name="Translation.php" role="php" />
+    <file name="TranslationException.php" role="php" />
+   </dir> <!-- /src -->
    <dir name="test">
-    <dir name="Horde">
-     <dir name="Translation">
-      <dir name="fixtures">
-       <dir name="composer">
-        <dir name="data">
-         <dir name="locale">
-          <dir name="de">
-           <dir name="LC_MESSAGES">
-            <file name="Horde_Translation_Composer.mo" role="test" />
-            <file name="Horde_Translation_Composer.po" role="test" />
-           </dir> <!-- /test/Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES -->
-          </dir> <!-- /test/Horde/Translation/fixtures/composer/data/locale/de -->
-         </dir> <!-- /test/Horde/Translation/fixtures/composer/data/locale -->
-        </dir> <!-- /test/Horde/Translation/fixtures/composer/data -->
-        <dir name="Horde">
-         <dir name="Translation">
-          <dir name="Composer">
-           <file name="TestAutodetect.php" role="test" />
-          </dir> <!-- /test/Horde/Translation/fixtures/composer/Horde/Translation/Composer -->
-         </dir> <!-- /test/Horde/Translation/fixtures/composer/Horde/Translation -->
-        </dir> <!-- /test/Horde/Translation/fixtures/composer/Horde -->
-       </dir> <!-- /test/Horde/Translation/fixtures/composer -->
+    <dir name="fixtures">
+     <dir name="composer">
+      <dir name="data">
        <dir name="locale">
         <dir name="de">
          <dir name="LC_MESSAGES">
-          <file name="Horde_Other.mo" role="test" />
-          <file name="Horde_Other.po" role="test" />
-          <file name="Horde_Translation.mo" role="test" />
-          <file name="Horde_Translation.po" role="test" />
-         </dir> <!-- /test/Horde/Translation/fixtures/locale/de/LC_MESSAGES -->
-        </dir> <!-- /test/Horde/Translation/fixtures/locale/de -->
-       </dir> <!-- /test/Horde/Translation/fixtures/locale -->
-       <dir name="pear">
-        <dir name="data">
-         <dir name="Horde_Translation_Pear">
-          <dir name="locale">
-           <dir name="de">
-            <dir name="LC_MESSAGES">
-             <file name="Horde_Translation_Pear.mo" role="test" />
-             <file name="Horde_Translation_Pear.po" role="test" />
-            </dir> <!-- /test/Horde/Translation/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES -->
-           </dir> <!-- /test/Horde/Translation/fixtures/pear/data/Horde_Translation_Pear/locale/de -->
-          </dir> <!-- /test/Horde/Translation/fixtures/pear/data/Horde_Translation_Pear/locale -->
-         </dir> <!-- /test/Horde/Translation/fixtures/pear/data/Horde_Translation_Pear -->
-        </dir> <!-- /test/Horde/Translation/fixtures/pear/data -->
-        <dir name="php">
-         <dir name="Horde">
-          <dir name="Translation">
-           <dir name="Pear">
-            <file name="TestAutodetect.php" role="test" />
-           </dir> <!-- /test/Horde/Translation/fixtures/pear/php/Horde/Translation/Pear -->
-          </dir> <!-- /test/Horde/Translation/fixtures/pear/php/Horde/Translation -->
-         </dir> <!-- /test/Horde/Translation/fixtures/pear/php/Horde -->
-        </dir> <!-- /test/Horde/Translation/fixtures/pear/php -->
-       </dir> <!-- /test/Horde/Translation/fixtures/pear -->
-       <dir name="source">
-        <dir name="lib">
-         <dir name="Horde">
-          <dir name="Translation">
-           <dir name="Source">
-            <file name="TestAutodetect.php" role="test" />
-           </dir> <!-- /test/Horde/Translation/fixtures/source/lib/Horde/Translation/Source -->
-          </dir> <!-- /test/Horde/Translation/fixtures/source/lib/Horde/Translation -->
-         </dir> <!-- /test/Horde/Translation/fixtures/source/lib/Horde -->
-        </dir> <!-- /test/Horde/Translation/fixtures/source/lib -->
+          <file name="Horde_Translation_Composer.mo" role="test" />
+          <file name="Horde_Translation_Composer.po" role="test" />
+         </dir> <!-- /test/fixtures/composer/data/locale/de/LC_MESSAGES -->
+        </dir> <!-- /test/fixtures/composer/data/locale/de -->
+       </dir> <!-- /test/fixtures/composer/data/locale -->
+      </dir> <!-- /test/fixtures/composer/data -->
+      <dir name="Horde">
+       <dir name="Translation">
+        <dir name="Composer">
+         <file name="TestAutodetect.php" role="test" />
+        </dir> <!-- /test/fixtures/composer/Horde/Translation/Composer -->
+       </dir> <!-- /test/fixtures/composer/Horde/Translation -->
+      </dir> <!-- /test/fixtures/composer/Horde -->
+     </dir> <!-- /test/fixtures/composer -->
+     <dir name="locale">
+      <dir name="de">
+       <dir name="LC_MESSAGES">
+        <file name="Horde_Other.mo" role="test" />
+        <file name="Horde_Other.po" role="test" />
+        <file name="Horde_Translation.mo" role="test" />
+        <file name="Horde_Translation.po" role="test" />
+       </dir> <!-- /test/fixtures/locale/de/LC_MESSAGES -->
+      </dir> <!-- /test/fixtures/locale/de -->
+     </dir> <!-- /test/fixtures/locale -->
+     <dir name="pear">
+      <dir name="data">
+       <dir name="Horde_Translation_Pear">
         <dir name="locale">
          <dir name="de">
           <dir name="LC_MESSAGES">
-           <file name="Horde_Translation_Source.mo" role="test" />
-           <file name="Horde_Translation_Source.po" role="test" />
-          </dir> <!-- /test/Horde/Translation/fixtures/source/locale/de/LC_MESSAGES -->
-         </dir> <!-- /test/Horde/Translation/fixtures/source/locale/de -->
-        </dir> <!-- /test/Horde/Translation/fixtures/source/locale -->
-       </dir> <!-- /test/Horde/Translation/fixtures/source -->
-      </dir> <!-- /test/Horde/Translation/fixtures -->
-      <file name="AllTests.php" role="test" />
-      <file name="AutodetectTest.php" role="test" />
-      <file name="bootstrap.php" role="test" />
-      <file name="GettextTest.php" role="test" />
-      <file name="TestBase.php" role="test" />
-      <file name="WrapperTest.php" role="test" />
-     </dir> <!-- /test/Horde/Translation -->
-    </dir> <!-- /test/Horde -->
+           <file name="Horde_Translation_Pear.mo" role="test" />
+           <file name="Horde_Translation_Pear.po" role="test" />
+          </dir> <!-- /test/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES -->
+         </dir> <!-- /test/fixtures/pear/data/Horde_Translation_Pear/locale/de -->
+        </dir> <!-- /test/fixtures/pear/data/Horde_Translation_Pear/locale -->
+       </dir> <!-- /test/fixtures/pear/data/Horde_Translation_Pear -->
+      </dir> <!-- /test/fixtures/pear/data -->
+      <dir name="php">
+       <dir name="Horde">
+        <dir name="Translation">
+         <dir name="Pear">
+          <file name="TestAutodetect.php" role="test" />
+         </dir> <!-- /test/fixtures/pear/php/Horde/Translation/Pear -->
+        </dir> <!-- /test/fixtures/pear/php/Horde/Translation -->
+       </dir> <!-- /test/fixtures/pear/php/Horde -->
+      </dir> <!-- /test/fixtures/pear/php -->
+     </dir> <!-- /test/fixtures/pear -->
+     <dir name="source">
+      <dir name="lib">
+       <dir name="Horde">
+        <dir name="Translation">
+         <dir name="Source">
+          <file name="TestAutodetect.php" role="test" />
+         </dir> <!-- /test/fixtures/source/lib/Horde/Translation/Source -->
+        </dir> <!-- /test/fixtures/source/lib/Horde/Translation -->
+       </dir> <!-- /test/fixtures/source/lib/Horde -->
+      </dir> <!-- /test/fixtures/source/lib -->
+      <dir name="locale">
+       <dir name="de">
+        <dir name="LC_MESSAGES">
+         <file name="Horde_Translation_Source.mo" role="test" />
+         <file name="Horde_Translation_Source.po" role="test" />
+        </dir> <!-- /test/fixtures/source/locale/de/LC_MESSAGES -->
+       </dir> <!-- /test/fixtures/source/locale/de -->
+      </dir> <!-- /test/fixtures/source/locale -->
+     </dir> <!-- /test/fixtures/source -->
+    </dir> <!-- /test/fixtures -->
+    <dir name="Helper">
+     <file name="TestWrapperA.php" role="test" />
+     <file name="TestWrapperB.php" role="test" />
+    </dir> <!-- /test/Helper -->
+    <file name="AllTests.php" role="test" />
+    <file name="AutodetectTest.php" role="test" />
+    <file name="bootstrap.php" role="test" />
+    <file name="GettextTest.php" role="test" />
+    <file name="TestBase.php" role="test" />
+    <file name="WrapperTest.php" role="test" />
    </dir> <!-- /test -->
    <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
@@ -152,6 +169,11 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="workflows/ci.yml" name=".github/workflows/ci.yml" />
+   <install as="workflows/phpdoc.yml" name=".github/workflows/phpdoc.yml" />
+   <install as="workflows/release.yml" name=".github/workflows/release.yml" />
+   <install as="workflows/update-composer-json.yml" name=".github/workflows/update-composer-json.yml" />
+   <install as="workflows/update-satis.yml" name=".github/workflows/update-satis.yml" />
    <install as="CHANGES" name="doc/Horde/Translation/CHANGES" />
    <install as="Horde/Translation.php" name="lib/Horde/Translation.php" />
    <install as="Horde/Translation/Autodetect.php" name="lib/Horde/Translation/Autodetect.php" />
@@ -159,25 +181,33 @@
    <install as="Horde/Translation/Handler.php" name="lib/Horde/Translation/Handler.php" />
    <install as="Horde/Translation/Handler/Gettext.php" name="lib/Horde/Translation/Handler/Gettext.php" />
    <install as="LICENSE" name="LICENSE" />
-   <install as="Horde/Translation/AllTests.php" name="test/Horde/Translation/AllTests.php" />
-   <install as="Horde/Translation/AutodetectTest.php" name="test/Horde/Translation/AutodetectTest.php" />
-   <install as="Horde/Translation/bootstrap.php" name="test/Horde/Translation/bootstrap.php" />
-   <install as="Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" name="test/Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" />
-   <install as="Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.po" name="test/Horde/Translation/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.po" />
-   <install as="Horde/Translation/fixtures/composer/Horde/Translation/Composer/TestAutodetect.php" name="test/Horde/Translation/fixtures/composer/Horde/Translation/Composer/TestAutodetect.php" />
-   <install as="Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Other.mo" name="test/Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Other.mo" />
-   <install as="Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Other.po" name="test/Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Other.po" />
-   <install as="Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Translation.mo" name="test/Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Translation.mo" />
-   <install as="Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Translation.po" name="test/Horde/Translation/fixtures/locale/de/LC_MESSAGES/Horde_Translation.po" />
-   <install as="Horde/Translation/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.mo" name="test/Horde/Translation/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.mo" />
-   <install as="Horde/Translation/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.po" name="test/Horde/Translation/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.po" />
-   <install as="Horde/Translation/fixtures/pear/php/Horde/Translation/Pear/TestAutodetect.php" name="test/Horde/Translation/fixtures/pear/php/Horde/Translation/Pear/TestAutodetect.php" />
-   <install as="Horde/Translation/fixtures/source/lib/Horde/Translation/Source/TestAutodetect.php" name="test/Horde/Translation/fixtures/source/lib/Horde/Translation/Source/TestAutodetect.php" />
-   <install as="Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" name="test/Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" />
-   <install as="Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" name="test/Horde/Translation/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" />
-   <install as="Horde/Translation/GettextTest.php" name="test/Horde/Translation/GettextTest.php" />
-   <install as="Horde/Translation/TestBase.php" name="test/Horde/Translation/TestBase.php" />
-   <install as="Horde/Translation/WrapperTest.php" name="test/Horde/Translation/WrapperTest.php" />
+   <install as="AbstractTranslation.php" name="src/AbstractTranslation.php" />
+   <install as="Autodetect.php" name="src/Autodetect.php" />
+   <install as="GettextHandler.php" name="src/GettextHandler.php" />
+   <install as="Handler.php" name="src/Handler.php" />
+   <install as="Translation.php" name="src/Translation.php" />
+   <install as="TranslationException.php" name="src/TranslationException.php" />
+   <install as="AllTests.php" name="test/AllTests.php" />
+   <install as="AutodetectTest.php" name="test/AutodetectTest.php" />
+   <install as="bootstrap.php" name="test/bootstrap.php" />
+   <install as="fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" name="test/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.mo" />
+   <install as="fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.po" name="test/fixtures/composer/data/locale/de/LC_MESSAGES/Horde_Translation_Composer.po" />
+   <install as="fixtures/composer/Horde/Translation/Composer/TestAutodetect.php" name="test/fixtures/composer/Horde/Translation/Composer/TestAutodetect.php" />
+   <install as="fixtures/locale/de/LC_MESSAGES/Horde_Other.mo" name="test/fixtures/locale/de/LC_MESSAGES/Horde_Other.mo" />
+   <install as="fixtures/locale/de/LC_MESSAGES/Horde_Other.po" name="test/fixtures/locale/de/LC_MESSAGES/Horde_Other.po" />
+   <install as="fixtures/locale/de/LC_MESSAGES/Horde_Translation.mo" name="test/fixtures/locale/de/LC_MESSAGES/Horde_Translation.mo" />
+   <install as="fixtures/locale/de/LC_MESSAGES/Horde_Translation.po" name="test/fixtures/locale/de/LC_MESSAGES/Horde_Translation.po" />
+   <install as="fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.mo" name="test/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.mo" />
+   <install as="fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.po" name="test/fixtures/pear/data/Horde_Translation_Pear/locale/de/LC_MESSAGES/Horde_Translation_Pear.po" />
+   <install as="fixtures/pear/php/Horde/Translation/Pear/TestAutodetect.php" name="test/fixtures/pear/php/Horde/Translation/Pear/TestAutodetect.php" />
+   <install as="fixtures/source/lib/Horde/Translation/Source/TestAutodetect.php" name="test/fixtures/source/lib/Horde/Translation/Source/TestAutodetect.php" />
+   <install as="fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" name="test/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.mo" />
+   <install as="fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" name="test/fixtures/source/locale/de/LC_MESSAGES/Horde_Translation_Source.po" />
+   <install as="GettextTest.php" name="test/GettextTest.php" />
+   <install as="Helper/TestWrapperA.php" name="test/Helper/TestWrapperA.php" />
+   <install as="Helper/TestWrapperB.php" name="test/Helper/TestWrapperB.php" />
+   <install as="TestBase.php" name="test/TestBase.php" />
+   <install as="WrapperTest.php" name="test/WrapperTest.php" />
   </filelist>
  </phprelease>
  <changelog>
@@ -431,70 +461,9 @@
     <api>alpha</api>
    </stability>
    <date>2021-02-24</date>
-   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1-only</license>
    <notes>
 * |+
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>3.0.0alpha3</release>
-    <api>3.0.0alpha1</api>
-   </version>
-   <stability>
-    <release>alpha</release>
-    <api>alpha</api>
-   </stability>
-   <date>2021-03-13</date>
-   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
-   <notes>
-* |+
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>3.0.0alpha4</release>
-    <api>3.0.0alpha1</api>
-   </version>
-   <stability>
-    <release>alpha</release>
-    <api>alpha</api>
-   </stability>
-   <date>2021-03-13</date>
-   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
-   <notes>
-* [rla] Add typesafe PSR-4 version with composer-ready detection.
-* |+
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>3.0.0alpha5</release>
-    <api>3.0.0alpha1</api>
-   </version>
-   <stability>
-    <release>alpha</release>
-    <api>alpha</api>
-   </stability>
-   <date>2021-03-13</date>
-   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
-   <notes>
-* |+
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>3.0.0alpha6</release>
-    <api>3.0.0alpha1</api>
-   </version>
-   <stability>
-    <release>alpha</release>
-    <api>alpha</api>
-   </stability>
-   <date>2021-03-13</date>
-   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
-   <notes>
-* 
    </notes>
   </release>
  </changelog>
