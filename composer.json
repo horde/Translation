@@ -1,5 +1,4 @@
 {
-    "minimum-stability": "dev",
     "name": "horde/translation",
     "description": "Translation library",
     "type": "library",
@@ -12,18 +11,13 @@
             "role": "lead"
         }
     ],
-    "time": "2021-11-24",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://horde-satis.maintaina.com/"
-        }
-    ],
+    "time": "2022-08-19",
+    "repositories": [],
     "require": {
         "php": "^7.4 || ^8"
     },
     "require-dev": {
-        "horde/test": "^3 || dev-FRAMEWORK_6_0"
+        "horde/test": "^3"
     },
     "suggest": {
         "ext-gettext": "*"
@@ -39,6 +33,11 @@
     "autoload-dev": {
         "psr-4": {
             "Horde\\Translation\\Test\\": "test/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "horde/horde-installer-plugin": true
         }
     }
 }
