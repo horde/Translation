@@ -11,7 +11,7 @@ class Horde_Translation_GettextTest extends Horde_Translation_TestBase
     private $_dict;
     private $_otherDict;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->_dict = new Horde_Translation_Handler_Gettext('Horde_Translation', __DIR__ . '/fixtures/locale');
