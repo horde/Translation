@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2010-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2010-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -12,8 +13,11 @@
  * @since     2.2.0
  */
 declare(strict_types=1);
+
 namespace Horde\Translation;
+
 use ReflectionClass;
+
 /**
  * The Horde_Translation_Autodetect auto detects the locale directory location
  * for the class implementing it.
@@ -95,14 +99,14 @@ abstract class Autodetect extends AbstractTranslation
         $depth = substr_count($className, '\\')
             ?: substr_count($className, '_');
 
-        return array(
+        return [
             /* Modern Composer PSR-4 case*/
             dirname($basedir) . '/locale',
             /* Traditional Composer */
             $basedir . str_repeat('/..', $depth) . '/data/locale',
             /* Source */
-            $basedir . str_repeat('/..', $depth + 1) . '/locale'
-        );
+            $basedir . str_repeat('/..', $depth + 1) . '/locale',
+        ];
     }
 
 }

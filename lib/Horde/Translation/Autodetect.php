@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2010-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2010-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -92,12 +93,12 @@ abstract class Horde_Translation_Autodetect extends Horde_Translation
         $depth = substr_count($className, '\\')
             ?: substr_count($className, '_');
 
-        return array(
+        return [
             /* Composer */
             $basedir . str_repeat('/..', $depth) . '/data/locale',
             /* Source */
-            $basedir . str_repeat('/..', $depth + 1) . '/locale'
-        );
+            $basedir . str_repeat('/..', $depth + 1) . '/locale',
+        ];
     }
 
 }
