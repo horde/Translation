@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
@@ -6,11 +7,16 @@
  * @package    Translation
  * @subpackage UnitTests
  */
-namespace Horde\Translation\Test;
-use \Horde_Translation_Source_TestAutodetect;
-use \Horde_Translation_Pear_TestAutodetect;
-use \Horde_Translation_Composer_TestAutodetect;
 
+namespace Horde\Translation\Test;
+
+use Horde_Translation_Source_TestAutodetect;
+use Horde_Translation_Pear_TestAutodetect;
+use Horde_Translation_Composer_TestAutodetect;
+
+/**
+ * @coversNothing
+ */
 class AutodetectTest extends TestBase
 {
     public function testAutodetectSource()
@@ -30,7 +36,8 @@ class AutodetectTest extends TestBase
                 Horde_Translation_Source_TestAutodetect::ngettext(
                     '%d week',
                     '%d weeks',
-                    1),
+                    1
+                ),
                 1
             )
         );
@@ -54,7 +61,8 @@ class AutodetectTest extends TestBase
                 Horde_Translation_Pear_TestAutodetect::ngettext(
                     '%d week',
                     '%d weeks',
-                    1),
+                    1
+                ),
                 1
             )
         );
@@ -77,7 +85,8 @@ class AutodetectTest extends TestBase
                 Horde_Translation_Composer_TestAutodetect::ngettext(
                     '%d week',
                     '%d weeks',
-                    1),
+                    1
+                ),
                 1
             )
         );

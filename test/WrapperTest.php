@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
@@ -6,9 +7,14 @@
  * @package    Translation
  * @subpackage UnitTests
  */
+
 namespace Horde\Translation\Test;
+
 use Horde_Translation;
 
+/**
+ * @coversNothing
+ */
 class WrapperTest extends TestBase
 {
     public function testWrappers()

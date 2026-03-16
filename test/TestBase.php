@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
@@ -6,19 +7,23 @@
  * @package    Translation
  * @subpackage UnitTests
  */
-namespace Horde\Translation\Test;
-use \PHPUnit\Framework\TestCase;
-use \PHPUnit\Framework\Exception as PHPUnitException;
 
+namespace Horde\Translation\Test;
+
+use PHPUnit\Framework\TestCase;
+
+/**
+ * @coversNothing
+ */
 class TestBase extends TestCase
 {
     private $_env;
 
     public function setUp(): void
     {
-        try {
-            $this->setLocale(LC_ALL, 'de_DE.UTF-8');
-        } catch (PHPUnitException $e) {
+        // Try to set locale
+        $result = setlocale(LC_ALL, 'de_DE.UTF-8');
+        if ($result === false) {
             $this->markTestSkipped('Setting the locale failed. de_DE.UTF-8 might not be supported.');
         }
         $this->_setEnv('de_DE.UTF-8');
@@ -31,7 +36,7 @@ class TestBase extends TestCase
 
     private function _setEnv($value)
     {
-        foreach (array('LC_ALL', 'LANG', 'LANGUAGE') as $env) {
+        foreach (['LC_ALL', 'LANG', 'LANGUAGE'] as $env) {
             $this->_env[$env] = getenv($env);
             putenv($env . '=' . $value);
         }
@@ -39,7 +44,7 @@ class TestBase extends TestCase
 
     private function _restoreEnv()
     {
-        foreach (array('LC_ALL', 'LANG', 'LANGUAGE') as $env) {
+        foreach (['LC_ALL', 'LANG', 'LANGUAGE'] as $env) {
             putenv($env . '=' . $this->_env[$env]);
         }
     }
