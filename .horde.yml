@@ -25,9 +25,6 @@ license:
 dependencies:
   required:
     php: ^7.4 || ^8
-  dev:
-    composer:
-      horde/test: ^3
   optional:
     ext:
       gettext: '*'
