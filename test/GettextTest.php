@@ -11,10 +11,9 @@
 namespace Horde\Translation\Test;
 
 use Horde_Translation_Handler_Gettext;
+use PHPUnit\Framework\Attributes\CoversClass;
 
-/**
- * @coversNothing
- */
+#[CoversClass(Horde_Translation_Handler_Gettext::class)]
 class GettextTest extends TestBase
 {
     private $_dict;

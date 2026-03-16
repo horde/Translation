@@ -13,10 +13,13 @@ namespace Horde\Translation\Test;
 use Horde_Translation_Source_TestAutodetect;
 use Horde_Translation_Pear_TestAutodetect;
 use Horde_Translation_Composer_TestAutodetect;
+use Horde_Translation_Autodetect;
+use Horde_Translation_Handler_Gettext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 
-/**
- * @coversNothing
- */
+#[CoversClass(Horde_Translation_Autodetect::class)]
+#[UsesClass(Horde_Translation_Handler_Gettext::class)]
 class AutodetectTest extends TestBase
 {
     public function testAutodetectSource()

@@ -13,7 +13,7 @@ namespace Horde\Translation\Test;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversNothing
+ * Base test class for Horde\Translation tests.
  */
 class TestBase extends TestCase
 {
