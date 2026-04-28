@@ -125,6 +125,24 @@ abstract class AbstractTranslation implements Translation
     }
 
     /**
+     * Translates and formats an ICU MessageFormat string.
+     *
+     * @param string $message            The ICU message pattern (or message key).
+     * @param array<string, mixed> $params  Named parameters for ICU formatting.
+     * @param string|null $locale        Locale for number/date/plural formatting.
+     *
+     * @return string  The formatted translation, or the original string if
+     *                 the handler does not support ICU formatting.
+     */
+    public static function format(string $message, array $params = [], ?string $locale = null): string
+    {
+        if (!isset(static::$handlers[static::$domain])) {
+            static::loadHandler(GettextHandler::class);
+        }
+        return static::$handlers[static::$domain]->format($message, $params, $locale);
+    }
+
+    /**
      * Allows a gettext string to be defined and recognized as a string by
      * the horde translation utilities, but no translation is actually
      * performed (raw gettext = r()).

@@ -42,4 +42,18 @@ interface Handler
      *                 translation exists.
      */
     public function ngettext(string $singular, string $plural, int $number): string;
+
+    /**
+     * Translates and formats an ICU MessageFormat string.
+     *
+     * Handlers that do not support ICU formatting return $message unchanged.
+     *
+     * @param string $message            The ICU message pattern (or message key).
+     * @param array<string, mixed> $params  Named parameters for ICU formatting.
+     * @param string|null $locale        Locale for number/date/plural formatting.
+     *
+     * @return string  The formatted translation, or the original string if
+     *                 this handler does not support ICU formatting.
+     */
+    public function format(string $message, array $params = [], ?string $locale = null): string;
 }

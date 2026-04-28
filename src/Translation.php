@@ -75,6 +75,20 @@ interface Translation
     public static function ngettext(string $singular, string $plural, int $number): string;
 
     /**
+     * Translates and formats an ICU MessageFormat string.
+     *
+     * Handlers that do not support ICU formatting return $message unchanged.
+     *
+     * @param string $message            The ICU message pattern (or message key).
+     * @param array<string, mixed> $params  Named parameters for ICU formatting.
+     * @param string|null $locale        Locale for number/date/plural formatting.
+     *
+     * @return string  The formatted translation, or the original string if
+     *                 the handler does not support ICU formatting.
+     */
+    public static function format(string $message, array $params = [], ?string $locale = null): string;
+
+    /**
      * Allows a gettext string to be defined and recognized as a string by
      * the horde translation utilities, but no translation is actually
      * performed (raw gettext = r()).

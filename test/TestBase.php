@@ -14,6 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Base test class for Horde\Translation tests.
+ * @coversNothing
  */
 class TestBase extends TestCase
 {

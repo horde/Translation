@@ -1,0 +1,7 @@
+{
+    "Today": "Heute",
+    "Beautiful": "Schön",
+    "%d days": "%d Tage",
+    "{count, plural, one {# day} other {# days}}": "{count, plural, one {# Tag} other {# Tage}}",
+    "{count, plural, one {# week} other {# weeks}}": "{count, plural, one {# Woche} other {# Wochen}}"
+}

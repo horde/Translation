@@ -15,8 +15,11 @@ namespace Horde\Translation;
 use InvalidArgumentException;
 
 /**
- * The Horde_Translation_Handler_Gettext provides translations through the
- * gettext extension, but fails gracefully if gettext is not installed.
+ * Gettext-style translation handler using simple string lookup and
+ * plural selection.
+ *
+ * Delegates catalog retrieval to a Storage backend. Defaults to
+ * GettextMoStorage for backwards compatibility.
  *
  * @author  Jan Schneider <jan@horde.org>
  * @package Translation
@@ -25,35 +28,23 @@ class GettextHandler implements Handler
 {
     /**
      * The translation domain, e.g. package name.
-     *
-     * @var string
      */
     protected string $domain;
 
     /**
-     * Whether the gettext extension is installed.
-     *
-     * @var bool
+     * The storage backend.
      */
-    protected bool $gettext;
+    protected Storage $storage;
 
     /**
-     * Constructor.
-     *
-     * @param string $domain  The translation domain, e.g. package name.
-     * @param string $path    The path to the gettext catalog.
+     * @param string $domain        The translation domain, e.g. package name.
+     * @param string $path          The path to the gettext catalog.
+     * @param Storage|null $storage  Storage backend. Defaults to GettextMoStorage.
      */
-    public function __construct(string $domain, string $path)
+    public function __construct(string $domain, string $path, ?Storage $storage = null)
     {
-        if (!is_dir($path)) {
-            throw new InvalidArgumentException("$path is not a directory");
-        }
-        $this->gettext = function_exists('_');
-        if (!$this->gettext) {
-            return;
-        }
         $this->domain = $domain;
-        bindtextdomain($this->domain, $path);
+        $this->storage = $storage ?? new GettextMoStorage($domain, $path);
     }
 
     /**
@@ -66,7 +57,7 @@ class GettextHandler implements Handler
      */
     public function t(string $message): string
     {
-        return $this->gettext ? dgettext($this->domain, $message) : $message;
+        return $this->storage->get($message) ?? $message;
     }
 
     /**
@@ -74,15 +65,24 @@ class GettextHandler implements Handler
      *
      * @param string $singular  The singular version to translate.
      * @param string $plural    The plural version to translate.
-     * @param int $number   The number that determines singular vs. plural.
+     * @param int $number       The number that determines singular vs. plural.
      *
      * @return string  The string translation, or the original string if no
      *                 translation exists.
      */
     public function ngettext(string $singular, string $plural, int $number): string
     {
-        return $this->gettext
-          ? dngettext($this->domain, $singular, $plural, $number)
-          : ($number > 1 ? $plural : $singular);
+        return $this->storage->getPlural($singular, $plural, $number)
+            ?? ($number === 1 ? $singular : $plural);
+    }
+
+    /**
+     * ICU MessageFormat is not supported by this handler.
+     *
+     * Returns the message unchanged.
+     */
+    public function format(string $message, array $params = [], ?string $locale = null): string
+    {
+        return $message;
     }
 }
