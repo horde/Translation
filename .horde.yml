@@ -7,8 +7,7 @@ list: dev
 type: library
 homepage: https://www.horde.org/libraries/Horde_Translation
 authors:
-  -
-    name: Jan Schneider
+  - name: Jan Schneider
     user: jan
     email: jan@horde.org
     active: true
@@ -34,3 +33,12 @@ keywords:
   - icu
   - messageformat
   - json
+ci-platform:
+  '8.1': not resolvable
+  '8.2': not resolvable
+  '8.3': not resolvable
+  '8.4': not resolvable
+  '8.5': not resolvable
+  '8.6': not resolvable
+ci-platform-flags:
+  needs_installer_plugin: false
