@@ -1,4 +1,14 @@
 ---
+3.0.0:
+  api: 3.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2026-06-27
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: "chore: refresh qc fixes and platform deps\nchore: Update workflow dependency"
 3.0.0-beta2:
   api: 3.0.0-beta2
   state:
@@ -8,8 +18,7 @@
   license:
     identifier: LGPL-2.1-only
     uri: https://spdx.org/licenses/LGPL-2.1-only.html
-  notes: |-
-    feat: Implement ICU MessageFormatter backend and alternate JSON Storage
+  notes: 'feat: Implement ICU MessageFormatter backend and alternate JSON Storage'
 3.0.0-beta1:
   api: 3.0.0-beta1
   state:
@@ -19,9 +28,4 @@
   license:
     identifier: LGPL-2.1-only
     uri: https://spdx.org/licenses/LGPL-2.1-only.html
-  notes: |-
-    test: Upgrade coverage annotations
-    test: Update unit tests for phpunit 11-13
-    chore: Update meta files, gitignore etc
-    style: php-cs-fixer
-    Development mode for Translation-3.0.0alpha3
+  notes: "test: Upgrade coverage annotations\ntest: Update unit tests for phpunit 11-13\nchore: Update meta files, gitignore etc\nstyle: php-cs-fixer\nDevelopment mode for Translation-3.0.0alpha3"
